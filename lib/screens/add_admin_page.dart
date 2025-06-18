@@ -52,14 +52,25 @@ class _AddAdminPageState extends State<AddAdminPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(Icons.admin_panel_settings, size: 48, color: Colors.deepPurple),
-                      const SizedBox(height: 16),
-                      const Text(
-                        "Tambah Admin Baru",
-                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                      ),
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Align(
+      alignment: Alignment.centerLeft,
+      child: IconButton(
+        icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
+        onPressed: () => Navigator.pop(context),
+      ),
+    ),
+    const SizedBox(height: 8),
+
+    const Icon(Icons.admin_panel_settings, size: 48, color: Colors.deepPurple),
+    const SizedBox(height: 16),
+    const Text(
+      "Tambah Admin Baru",
+      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+    ),
+    // ... lanjutkan form seperti biasa
+
                       const SizedBox(height: 24),
 
                       // 👤 Nama
