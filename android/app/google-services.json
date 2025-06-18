@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "917693410310",
+    "project_id": "pelatihan-kemendagri",
+    "storage_bucket": "pelatihan-kemendagri.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917693410310:android:b8d5919fa743d00d55e787",
+        "android_client_info": {
+          "package_name": "com.example.pelatihan_kemendagri"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917693410310-ds1u8vupshgif971f74r2r6es5a4hgj0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pelatihan_kemendagri",
+            "certificate_hash": "3438925800ac0ebb6740b9688de06204dedd469d"
+          }
+        },
+        {
+          "client_id": "917693410310-c0il6eje99r6p2iqbrgipj7kt267m93l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe3isZ7yd3yZEYVkY5mGVrQWWSD6Bs_iI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917693410310-c0il6eje99r6p2iqbrgipj7kt267m93l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
