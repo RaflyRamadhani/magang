@@ -57,7 +57,7 @@ class _AddAdminPageState extends State<AddAdminPage> {
     Align(
       alignment: Alignment.centerLeft,
       child: IconButton(
-        icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
+        icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
         onPressed: () => Navigator.pop(context),
       ),
     ),
