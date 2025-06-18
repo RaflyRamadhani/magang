@@ -20,7 +20,10 @@ class _AddAdminPageState extends State<AddAdminPage> {
         title: Text(title),
         content: Text(message),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text("OK"))
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text("OK"),
+          ),
         ],
       ),
     );
@@ -48,17 +51,26 @@ class _AddAdminPageState extends State<AddAdminPage> {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Card(
                 elevation: 10,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(24),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.admin_panel_settings, size: 48, color: Colors.deepPurple),
+                      const Icon(
+                        Icons.admin_panel_settings,
+                        size: 48,
+                        color: Colors.deepPurple,
+                      ),
                       const SizedBox(height: 16),
                       const Text(
                         "Tambah Admin Baru",
-                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const SizedBox(height: 24),
 
@@ -89,28 +101,31 @@ class _AddAdminPageState extends State<AddAdminPage> {
                         child: ElevatedButton.icon(
                           icon: const Icon(Icons.save, color: Colors.white),
                           label: isLoading
-    ? Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          SizedBox(
-            height: 20,
-            width: 20,
-            child: CircularProgressIndicator(
-              color: Colors.white,
-              strokeWidth: 2,
-            ),
-          ),
-          SizedBox(width: 12),
-          Text(
-            "Menyimpan...",
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
-      )
-    : const Text(
-        "Simpan Admin",
-        style: TextStyle(color: Colors.white, fontSize: 16),
-      ),
+                              ? Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    SizedBox(
+                                      height: 20,
+                                      width: 20,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 2,
+                                      ),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Text(
+                                      "Menyimpan...",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                )
+                              : const Text(
+                                  "Simpan Admin",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
 
                           onPressed: isLoading
                               ? null
@@ -119,24 +134,35 @@ class _AddAdminPageState extends State<AddAdminPage> {
                                   try {
                                     var result = await FirebaseAuth.instance
                                         .createUserWithEmailAndPassword(
-                                            email: email, password: password);
+                                          email: email,
+                                          password: password,
+                                        );
 
                                     await FirebaseFirestore.instance
                                         .collection('users')
                                         .doc(result.user!.uid)
                                         .set({
-                                      'uid': result.user!.uid,
-                                      'name': name,
-                                      'email': email,
-                                      'role': 'admin',
-                                      'status': 'approved',
-                                    });
+                                          'uid': result.user!.uid,
+                                          'name': name,
+                                          'email': email,
+                                          'role': 'admin',
+                                          'status': 'approved',
+                                        });
 
                                     if (!mounted) return;
-                                    _showAlert("Berhasil", "Admin berhasil ditambahkan.");
+                                    _showAlert(
+                                      "Berhasil",
+                                      "Admin berhasil ditambahkan.",
+                                    );
                                     Navigator.pop(context);
                                   } catch (e) {
-                                    _showAlert("Gagal", e.toString().replaceFirst('Exception: ', ''));
+                                    _showAlert(
+                                      "Gagal",
+                                      e.toString().replaceFirst(
+                                        'Exception: ',
+                                        '',
+                                      ),
+                                    );
                                   } finally {
                                     setState(() => isLoading = false);
                                   }
