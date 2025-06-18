@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart'; // Tambahkan ini
 
 import 'screens/UploadBeritaPage.dart';
 import 'screens/ViewAllDocumentsPage.dart';
@@ -21,7 +20,6 @@ import 'screens/view_pendaftar_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(); // Inisialisasi Firebase
-  await initializeDateFormatting('id_ID', null); // ✅ Tambahkan ini
   runApp(const MyApp());
 }
 
@@ -37,7 +35,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      // Halaman awal
       home: const LoginPage(),
+
+      // Daftar route
       routes: {
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
@@ -52,7 +53,9 @@ class MyApp extends StatelessWidget {
         '/daftar_dokumen': (context) => const DaftarDokumenPage(),
         '/upload_document': (context) => const UploadDocumentPage(),
         '/view_documents': (context) => const ViewAllDocumentsPage(),
-        '/view_pendaftar': (context) => const ViewPendaftarPage(),
+        '/view_pendaftar': (context) => const ViewPendaftarPage(), // y
+        '/upload_berita': (context) => const UploadBeritaPage(),
+        '/lihat_berita': (context) => const LihatBeritaPage(),
         '/upload_berita': (context) => const UploadBeritaPage(),
       },
     );
