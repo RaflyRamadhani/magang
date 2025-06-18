@@ -59,6 +59,18 @@ class _AddAdminPageState extends State<AddAdminPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+
                       const Icon(
                         Icons.admin_panel_settings,
                         size: 48,
